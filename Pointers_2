@@ -1,0 +1,48 @@
+#include <cstdlib>
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+//zmienne
+int *array;
+int ilosc;
+int i;
+
+//deklaracje funkcji
+void henlo();
+void tablica();
+
+//int main
+int main()
+{
+    srand(time(0));
+    tablica();
+}
+
+//definicje funkcji
+void tablica()
+{
+    cout<<"wprowadz ilosc: ";
+    cin>>ilosc;
+    array=new int [ilosc];
+    for(i=0;i<ilosc;++i)
+    {
+        *array=rand()%10;
+        ++array;
+    }
+    array-=ilosc;
+    cout<<"tablica wartosci: ";
+    for(i=0;i<ilosc;++i)
+    {
+        cout<<*array<<" ";
+        ++array;
+    }
+    array-=ilosc;
+    cout<<endl<<"tablica numery komorek pamieci: ";
+    for(i=0;i<ilosc;++i)
+    {
+        cout<<(int)array<<" ";
+        ++array;
+    }
+}
