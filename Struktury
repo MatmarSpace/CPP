@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+
+//nasza struktura
+struct daneOsobowe
+{
+    string imie;
+    string nazwisko;
+    int wiek;
+} Maciek; //pierwsza struktura o nazwie Maciek od razu zrobiona
+
+
+int main()
+{
+    //pierwszy sposób
+    Maciek.imie="Maciek";
+    Maciek.nazwisko="Majweski";
+    Maciek.wiek=42;
+
+    cout<<Maciek.imie<<endl;
+    cout<<Maciek.nazwisko<<endl;
+    cout<<Maciek.wiek<<endl;
+    cout<<"============"<<endl;
+
+    //drugi sposób
+    daneOsobowe Kamil;
+    Kamil.imie="Kamil";
+    Kamil.nazwisko="Kozak";
+    Kamil.wiek=16;
+
+    cout<<Kamil.imie<<endl;
+    cout<<Kamil.nazwisko<<endl;
+    cout<<Kamil.wiek<<endl;
+    cout<<"============"<<endl;
+}
