@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int zmienna=5;
+int *wskaznik=&zmienna;
+
+void wyjasnijWskazniki()
+{
+    cout<<"zmienna: "<<zmienna<<endl;
+    cout<<"numer komorki w pamieci tej zmiennej: "<<(int)&zmienna<<endl;
+    cout<<"wskaznik: "<<(int)wskaznik<<endl;
+    cout<<"zmienna ze wskaznika: "<<*wskaznik<<endl;
+}
+
+int main()
+{
+    wyjasnijWskazniki();
+}
