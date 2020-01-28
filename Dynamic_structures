@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+
+//nasza struktura
+struct daneOsobowe
+{
+    string imie;
+    string nazwisko;
+    int wiek;
+};
+
+
+int main()
+{
+    daneOsobowe *Maks = new daneOsobowe;
+
+    Maks->imie="Maks";
+    Maks->nazwisko="Brezda";
+    Maks->wiek=17;
+
+    cout<<Maks->imie<<endl;
+    cout<<Maks->nazwisko<<endl;
+    cout<<Maks->wiek<<endl;
+    cout<<"==========="<<endl;
+    
+    cout<<(int)Maks<<" to jest wartosc wskaznika"<<endl;
+    cout<<(int)&Maks<<" to jest numer komorki w ktorej znajduje sie wskaznik"<<endl;
+    cout<<(int)&Maks->imie<<" to jest komorka na ktora ten wskaznik wskazuje"<<endl;
+    cout<<(int)&Maks->nazwisko<<" kazda kolejna rzecz w struct'cie jest co 4"<<endl;
+    cout<<(int)&Maks->wiek<<" znowu co 4"<<endl;
+
+    //usuwamy dane osobowe Maksa
+    delete Maks;
+
+    cout<<"==========="<<endl;
+    cout<<Maks->imie<<endl;
+}
