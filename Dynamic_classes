@@ -16,8 +16,7 @@ class Przedmiot
     //metody
     void eat()
     {
-        if(eatable==true)
-            delete this;
+        delete this;
     }
     void inputObject()
     {
@@ -39,32 +38,44 @@ class Przedmiot
 };
 
 //zmienne
-Przedmiot przedmiot1;
-Przedmiot przedmiot2;
+Przedmiot *przedmiot1 = new Przedmiot;
+Przedmiot *przedmiot2 = new Przedmiot;
 
 int main()
 {
     //wczytanie danych przedmiotów
-    przedmiot1.inputObject();
-    przedmiot2.inputObject();
+    przedmiot1->inputObject();
+    przedmiot2->inputObject();
 
     //wypisanie danych przedmiotów
-    przedmiot1.outputObject();
-    przedmiot2.outputObject();
+    przedmiot1->outputObject();
+    przedmiot2->outputObject();
 
     //porównaie wagi przedmiotów
     cout<<"============="<<endl;
-    if(przedmiot1.waga==przedmiot2.waga)
+    if(przedmiot1->waga==przedmiot2->waga)
         cout<<"Przedmioty maja rowna wage"<<endl;
-    else if(przedmiot1.waga>przedmiot2.waga)
+    else if(przedmiot1->waga>przedmiot2->waga)
         cout<<"Przedmiot 1 jest ciezszy od przedmiotu 2"<<endl;
     else
         cout<<"Przedmiot 1 jest lzejszy od przedmiotu 2"<<endl;
 
     //zjedzenie przedmiotów
-    przedmiot1.eat();
-    przedmiot2.eat();
+    if(przedmiot1->eatable==true)
+    {
+        przedmiot1->eat();
+        przedmiot1=NULL;
+    }
+    if(przedmiot2->eatable==true)
+    {
+        przedmiot2->eat();
+        przedmiot2=NULL;
+    }
 
-    przedmiot1.outputObject();
-    przedmiot2.outputObject();
+    if(przedmiot1!=NULL)
+        przedmiot1->outputObject();
+    if(przedmiot2!=NULL)
+        przedmiot2->outputObject();
+
+    cout<<"============="<<endl;
 }
