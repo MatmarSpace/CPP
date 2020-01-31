@@ -1,0 +1,70 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+//klasy
+class Przedmiot
+{
+    public:
+
+    //atrybuty
+    string nazwa;
+    float waga;
+    bool eatable;
+    
+    //metody
+    void eat()
+    {
+        if(eatable==true)
+            delete this;
+    }
+    void inputObject()
+    {
+        cout<<"============="<<endl;
+        cout<<"nazwa: ";
+        cin>>nazwa;
+        cout<<"waga: ";
+        cin>>waga;
+        cout<<"eatable: ";
+        cin>>eatable;
+    }
+    void outputObject()
+    {
+        cout<<"============="<<endl;
+        cout<<"nazwa: "<<nazwa<<endl;
+        cout<<"waga: "<<waga<<endl;
+        cout<<"eatable: "<<eatable<<endl;
+    }
+};
+
+//zmienne
+Przedmiot przedmiot1;
+Przedmiot przedmiot2;
+
+int main()
+{
+    //wczytanie danych przedmiotów
+    przedmiot1.inputObject();
+    przedmiot2.inputObject();
+
+    //wypisanie danych przedmiotów
+    przedmiot1.outputObject();
+    przedmiot2.outputObject();
+
+    //porównaie wagi przedmiotów
+    cout<<"============="<<endl;
+    if(przedmiot1.waga==przedmiot2.waga)
+        cout<<"Przedmioty maja rowna wage"<<endl;
+    else if(przedmiot1.waga>przedmiot2.waga)
+        cout<<"Przedmiot 1 jest ciezszy od przedmiotu 2"<<endl;
+    else
+        cout<<"Przedmiot 1 jest lzejszy od przedmiotu 2"<<endl;
+
+    //zjedzenie przedmiotów
+    przedmiot1.eat();
+    przedmiot2.eat();
+
+    przedmiot1.outputObject();
+    przedmiot2.outputObject();
+}
